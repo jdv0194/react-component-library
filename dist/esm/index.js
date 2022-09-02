@@ -1,3 +1,5 @@
+import { Button } from '@chakra-ui/react';
+
 function getDefaultExportFromCjs (x) {
 	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
 }
@@ -2800,9 +2802,13 @@ function requireReact_development () {
 
 var React = /*@__PURE__*/getDefaultExportFromCjs(react.exports);
 
-var Button = function (props) {
-    return (React.createElement("button", null, props.label));
+var ButtonMain = function (props) {
+    return (React.createElement(Button, { onClick: function () { props.handleClick; } }, props.label));
 };
 
-export { Button };
+var ButtonTwo = function (props) {
+    return (React.createElement("button", { style: { color: props.color } }, props.label));
+};
+
+export { ButtonMain, ButtonTwo };
 //# sourceMappingURL=index.js.map

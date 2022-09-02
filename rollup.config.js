@@ -4,6 +4,7 @@ import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 
 const packageJson = require('./package.json');
+import { peerDependencies } from './package.json';
 
 export default [
 	{
@@ -20,6 +21,7 @@ export default [
 				sourcemap: true,
 			},
 		],
+		external: Object.keys(peerDependencies),
 		plugins: [resolve(), commonjs(), typescript({ tsconfig: './tsconfig.json' })],
 	},
 	{

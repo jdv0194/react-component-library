@@ -1,7 +1,14 @@
 /// <reference types="react" />
+interface ButtonProps$1 {
+    label: string;
+    handleClick(): any;
+}
+declare const ButtonMain: (props: ButtonProps$1) => JSX.Element;
+
 interface ButtonProps {
     label: string;
+    color: string;
 }
-declare const Button: (props: ButtonProps) => JSX.Element;
+declare const ButtonTwo: (props: ButtonProps) => JSX.Element;
 
-export { Button };
+export { ButtonMain, ButtonTwo };
